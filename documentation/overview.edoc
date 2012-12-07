@@ -1,0 +1,19 @@
+@author christian@flodihn.se
+@copyright 2012 Christian Flodihn
+@version 0.1
+@title K-Dimensional binary Tree in Erlang
+@doc This is a K-Dimensional binary tree implemented in Erlang, currenlty this software is in a prototype stage. 
+
+todo:
+
+- Add a queue to handle messages arriving to unfolded nodes (will allow removal of the sleep statements in the functional tests).
+
+- Add a feature for children to send events up in the tree with a specified range.
+
+- Add distribution.
+
+- Add more functional test.
+
+- Add unit tests.
+
+@end
