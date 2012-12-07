@@ -112,7 +112,7 @@ test_trace_child4() ->
 	?assertEqual(Expected, TraceBack).
 
 
-three_dim_test_() ->
+depth_test_() ->
 	{foreach, fun setup_three_dim_tree_with_depth/0, fun teardown_tree/1,
 		[
 			{"Insert Child", fun test_insert_child/0},
