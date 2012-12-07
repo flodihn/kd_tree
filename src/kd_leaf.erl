@@ -34,7 +34,7 @@ handle_message({insert_child, {child_state, ChildState},
 	{ok, State#kd_leaf{children=NewChildren}};
 
 handle_message({trace, {traceback, TraceBack}, ReplyToTuple},
-        #kd_leaf{node_state=NodeState} = State) ->
+		#kd_leaf{node_state=NodeState} = State) ->
 	Parent = NodeState#kd_node.parent_pid,
 	DimName = NodeState#kd_node.my_dim,
 	Depth = NodeState#kd_node.depth,

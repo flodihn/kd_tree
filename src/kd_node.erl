@@ -152,8 +152,7 @@ insert_child_left_or_right(Dim, Median, State, ChildState, ReplyToPid) ->
 		true ->
 			State#kd_node.left ! InsertChildMessage;
 		false ->
-			State#kd_node.right ! {insert_child, 
-				{child_state, ChildState}, {reply_to_pid, ReplyToPid}}
+			State#kd_node.right ! InsertChildMessage
 	end.
 
 transform_to_leaf(LeafState) ->

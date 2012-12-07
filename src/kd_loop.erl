@@ -12,14 +12,14 @@
 -define(TIMEOUT, 2000).
 
 loop(Module, State) ->
-    receive
+	receive
 		destroy ->
 			exit(normal);
 		{transform, {new_module, NewModule}, {new_state, NewState}} ->
-            loop(NewModule, NewState);
-        Message ->
-            {ok, NewState} = Module:handle_message(Message, State),
-            loop(Module, NewState)
-    after ?TIMEOUT ->
-        loop(Module, State)
-    end.
+			loop(NewModule, NewState);
+		Message ->
+			{ok, NewState} = Module:handle_message(Message, State),
+			loop(Module, NewState)
+	after ?TIMEOUT ->
+		loop(Module, State)
+	end.

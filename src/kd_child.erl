@@ -37,8 +37,5 @@ handle_message({trace, {reply_to_pid, ReplyToPid}}, State) ->
 	{ok, State};
 
 handle_message(Message, State) ->
-	case Message of
-		Any ->
-			error_logger:info_report({unknown_message, Any}),
-			{ok, State}
-	end.
+	error_logger:info_report({unknown_message, Message}),
+	{ok, State}.
